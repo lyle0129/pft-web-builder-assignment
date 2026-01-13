@@ -4,45 +4,45 @@ import { ChevronLeft, ChevronRight, Play, Pause } from 'lucide-react';
 const galleryImages = [
   {
     id: 1,
-    image: "/src/assets/gallery-1.jpg",
-    altText: "Luxury estate exterior with landscaping",
-    caption: "Elegant Estate Exterior",
+    image: "/src/assets/gallery (1).png",
+    altText: "Sun-Filled Living Area with Scenic Views",
+    caption: "Sun-Filled Living Area with Scenic Views",
   },
   {
     id: 2,
-    image: "/src/assets/gallery-2.jpg",
-    altText: "Modern kitchen with premium finishes",
-    caption: "Gourmet Kitchen",
+    image: "/src/assets/gallery (2).png",
+    altText: "Resort-Style Community with Golf & Mountain Views",
+    caption: "Resort-Style Community with Golf & Mountain Views",
   },
   {
     id: 3,
-    image: "/src/assets/gallery-3.jpg",
-    altText: "Spacious living room with natural light",
-    caption: "Open Living Space",
+    image: "/src/assets/gallery (3).png",
+    altText: "Resort-Style Pool-Equiped Living",
+    caption: "Resort-Style Pool-Equiped Living",
   },
   {
     id: 4,
-    image: "/src/assets/gallery-4.jpg",
-    altText: "Master bedroom with luxury amenities",
-    caption: "Master Suite",
+    image: "/src/assets/gallery (4).png",
+    altText: "Spacious Driveways",
+    caption: "Spacious Driveways",
   },
   {
     id: 5,
-    image: "/src/assets/gallery-5.jpg",
-    altText: "Outdoor patio and entertainment area",
-    caption: "Outdoor Living",
+    image: "/src/assets/gallery (5).png",
+    altText: "Outdoor community entertainment area",
+    caption: "Outdoor community entertainment area",
   },
   {
     id: 6,
-    image: "/src/assets/gallery-6.jpg",
-    altText: "Swimming pool and landscaped backyard",
-    caption: "Resort-Style Pool",
+    image: "/src/assets/gallery (6).png",
+    altText: "Peaceful Environment",
+    caption: "Peaceful Environment",
   },
   {
     id: 7,
-    image: "/src/assets/gallery-7.jpg",
-    altText: "Elegant dining room with chandelier",
-    caption: "Formal Dining",
+    image: "/src/assets/gallery (7).png",
+    altText: "Excellent and Friendly Community",
+    caption: "Excellent and Friendly Community",
   },
 ];
 
@@ -117,7 +117,7 @@ const PhotoGallery = () => {
                        px-2 xs:px-0"
             style={{ color: 'var(--color-text-primary)' }}
           >
-            Property Gallery
+            Community Gallery
           </h2>
 
           <div className="flex justify-center mb-4 xs:mb-6">
@@ -136,9 +136,9 @@ const PhotoGallery = () => {
         </div>
 
         {/* Carousel */}
-        <div className="relative max-w-5xl mx-auto">
-          <div 
-            className="relative aspect-[16/9] overflow-hidden shadow-md"
+        <div className="relative max-w-2xl mx-auto w-full md:w-1/2">
+          <div
+            className="relative aspect-[4/3] overflow-hidden shadow-md rounded-lg"
             role="region"
             aria-labelledby="gallery-heading"
             aria-live="polite"
@@ -150,15 +150,23 @@ const PhotoGallery = () => {
             />
 
             {/* Caption */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent">
+            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent">
               <div className="absolute bottom-4 xs:bottom-6 sm:bottom-8 left-4 xs:left-6 right-4 xs:right-6 text-center">
-                <h3 className="text-white font-serif font-light
-                               text-base xs:text-lg sm:text-xl lg:text-2xl mb-1">
-                  {galleryImages[currentImageIndex].caption}
-                </h3>
-                <p className="text-gray-300 text-xs sm:text-sm font-light">
-                  {currentImageIndex + 1} of {galleryImages.length}
-                </p>
+                <div className="bg-black/60 backdrop-blur-sm rounded-lg px-4 py-3 border border-white/30">
+                  <h3 className="font-serif font-light
+                                 text-lg xs:text-xl sm:text-2xl lg:text-3xl mb-2
+                                 tracking-wide drop-shadow-lg"
+                    style={{ color: '#ffffff' }}>
+                    {galleryImages[currentImageIndex].caption}
+                  </h3>
+                  <div className="flex justify-center mb-2">
+                    <span className="w-8 h-px bg-white/80" />
+                  </div>
+                  <p className="text-sm sm:text-base font-light tracking-wide drop-shadow-lg"
+                    style={{ color: '#ffffff' }}>
+                    {currentImageIndex + 1} of {galleryImages.length}
+                  </p>
+                </div>
               </div>
             </div>
 
