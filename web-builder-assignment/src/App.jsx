@@ -2,6 +2,7 @@ import HeroSection from './components/HeroSection';
 import AboutSection from './components/AboutSection';
 import FeaturedListings from './components/FeaturedListings';
 import PhotoGallery from './components/PhotoGallery';
+import Testimonials from './components/Testimonials';
 import CallToAction from './components/CallToAction';
 import Footer from './components/Footer';
 
@@ -17,6 +18,7 @@ function App() {
       <main id="main-content" className="w-full">
         <HeroSection />
         <AboutSection />
+        <Testimonials />
         <FeaturedListings />
         <PhotoGallery />
         <CallToAction />

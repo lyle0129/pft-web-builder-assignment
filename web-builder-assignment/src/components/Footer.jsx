@@ -1,4 +1,4 @@
-import { Phone, Mail, MapPin } from 'lucide-react';
+import { Phone, Mail, MapPin, Facebook, Instagram, Linkedin } from 'lucide-react';
 
 const Footer = () => {
   return (
@@ -71,9 +71,9 @@ const Footer = () => {
               <nav aria-label="Social media links">
                 <div className="flex justify-center lg:justify-start gap-3 xs:gap-4">
                   {[
-                    { label: 'Facebook', text: 'f' },
-                    { label: 'Instagram', text: 'ig' },
-                    { label: 'LinkedIn', text: 'in' },
+                    { label: 'Facebook', icon: Facebook },
+                    { label: 'Instagram', icon: Instagram },
+                    { label: 'LinkedIn', icon: Linkedin },
                   ].map((item) => (
                     <a
                       key={item.label}
@@ -90,14 +90,12 @@ const Footer = () => {
                         transition-all duration-300
                         hover:bg-white/20 hover:text-white
                         focus-visible:ring-2 focus-visible:ring-white/60
-                        focus-visible:ring-offset-2
+                        focus-visible:ring-2 focus-visible:ring-offset-2
                         focus-visible:ring-offset-black
                         touch-manipulation
                       "
                     >
-                      <span className="text-sm font-medium uppercase">
-                        {item.text}
-                      </span>
+                      <item.icon size={18} />
                     </a>
                   ))}
                 </div>

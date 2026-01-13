@@ -18,13 +18,13 @@ const AboutSection = () => {
         >
           {/* Image */}
           <div className="flex justify-center order-1 lg:order-none">
-            <div className="relative max-w-xs xs:max-w-sm sm:max-w-md w-full overflow-hidden">
+            <div className="relative max-w-xs xs:max-w-sm sm:max-w-md w-full overflow-hidden rounded-2xl">
               <img
                 src={aboutPlaceholder}
                 alt="Professional real estate agent portrait"
                 className="
                   w-full h-auto object-cover aspect-[4/5]
-                  shadow-md
+                  shadow-md rounded-2xl
                 "
                 loading="lazy"
               />
