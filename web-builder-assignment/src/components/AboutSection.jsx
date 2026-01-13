@@ -1,5 +1,6 @@
 import aboutPlaceholder from '../assets/about-placeholder.jpg';
 import { Award, TrendingUp } from 'lucide-react';
+import AnimatedSection from './AnimatedSection';
 
 const AboutSection = () => {
   return (
@@ -17,22 +18,25 @@ const AboutSection = () => {
           "
         >
           {/* Image */}
-          <div className="flex justify-center order-1 lg:order-none">
-            <div className="relative max-w-xs xs:max-w-sm sm:max-w-md w-full overflow-hidden rounded-2xl">
-              <img
-                src={aboutPlaceholder}
-                alt="Professional real estate agent portrait"
-                className="
-                  w-full h-auto object-cover aspect-[4/5]
-                  shadow-md rounded-2xl
-                "
-                loading="lazy"
-              />
+          <AnimatedSection delay={0.1}>
+            <div className="flex justify-center order-1 lg:order-none">
+              <div className="relative max-w-xs xs:max-w-sm sm:max-w-md w-full overflow-hidden rounded-2xl">
+                <img
+                  src={aboutPlaceholder}
+                  alt="Professional real estate agent portrait"
+                  className="
+                    w-full h-auto object-cover aspect-[4/5]
+                    shadow-md rounded-2xl
+                  "
+                  loading="lazy"
+                />
+              </div>
             </div>
-          </div>
+          </AnimatedSection>
 
           {/* Content */}
-          <div className="space-y-6 xs:space-y-8 sm:space-y-10 text-center lg:text-left order-2 lg:order-none">
+          <AnimatedSection delay={0.3}>
+            <div className="space-y-6 xs:space-y-8 sm:space-y-10 text-center lg:text-left order-2 lg:order-none">
             {/* Heading */}
             <div className="space-y-3 xs:space-y-5">
               <h2
@@ -126,7 +130,8 @@ const AboutSection = () => {
                 </div>
               </div>
             </div>
-          </div>
+            </div>
+          </AnimatedSection>
         </div>
       </div>
     </section>

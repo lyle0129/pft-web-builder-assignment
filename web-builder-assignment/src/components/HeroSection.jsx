@@ -1,6 +1,7 @@
 import heroPlaceholder from '../assets/hero-placeholder.jpg';
 import logo from '../assets/logo.png';
 import { ArrowRight } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const HeroSection = () => {
   return (
@@ -26,7 +27,12 @@ const HeroSection = () => {
       </div>
 
       {/* Logo */}
-      <div className="absolute top-12 xs:top-14 sm:top-18 left-1/2 transform -translate-x-1/2 z-20">
+      <motion.div 
+        initial={{ opacity: 0, y: -30, filter: "blur(8px)" }}
+        animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+        transition={{ duration: 1, delay: 0.2, ease: [0.25, 0.46, 0.45, 0.94] }}
+        className="absolute top-12 xs:top-14 sm:top-18 left-1/2 transform -translate-x-1/2 z-20"
+      >
         <img
           src={logo}
           alt="The Ridge Realty Group Logo"
@@ -36,14 +42,17 @@ const HeroSection = () => {
           "
           loading="eager"
         />
-      </div>
+      </motion.div>
 
       {/* Content */}
       <div className="relative z-10 w-full max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 pt-32 xs:pt-36 sm:pt-0">
         <div className="text-center">
 
           {/* Headline */}
-          <h1
+          <motion.h1
+            initial={{ opacity: 0, y: 50, filter: "blur(10px)" }}
+            animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+            transition={{ duration: 1.2, delay: 0.5, ease: [0.25, 0.46, 0.45, 0.94] }}
             id="hero-heading"
             className="
               font-serif font-light text-white
@@ -67,10 +76,13 @@ const HeroSection = () => {
             >
               OWNER OF THE RIDGE REALTY GROUP
             </span>
-          </h1>
+          </motion.h1>
 
           {/* Subheadline */}
-          <p
+          <motion.p
+            initial={{ opacity: 0, y: 40, filter: "blur(8px)" }}
+            animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+            transition={{ duration: 1, delay: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
             className="
               text-gray-200 font-light
               text-sm xs:text-base sm:text-lg lg:text-xl
@@ -82,10 +94,15 @@ const HeroSection = () => {
           >
             Discover exceptional properties with personalized service and unmatched expertise
             in luxury real estate.
-          </p>
+          </motion.p>
 
           {/* CTA */}
-          <div className="flex justify-center px-4 xs:px-0">
+          <motion.div 
+            initial={{ opacity: 0, y: 30, filter: "blur(6px)" }}
+            animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+            transition={{ duration: 0.8, delay: 1.1, ease: [0.25, 0.46, 0.45, 0.94] }}
+            className="flex justify-center px-4 xs:px-0"
+          >
             <button
               type="button"
               aria-label="View available luxury properties"
@@ -112,7 +129,7 @@ const HeroSection = () => {
               View Properties
               <ArrowRight size={16} className="transition-transform duration-300 group-hover:translate-x-1" />
             </button>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

@@ -1,4 +1,6 @@
 
+import AnimatedSection from './AnimatedSection';
+
 const Testimonials = () => {
     // Edit this array to change testimonials
     const testimonials = [
@@ -25,26 +27,30 @@ const Testimonials = () => {
     return (
         <section className="testimonials-section">
             <div className="container">
-                <div className="testimonials-header">
-                    <h2>What Our Clients Say</h2>
-                    <p>Real experiences from real people who found their perfect home with us</p>
-                </div>
+                <AnimatedSection delay={0.1}>
+                    <div className="testimonials-header">
+                        <h2>What Our Clients Say</h2>
+                        <p>Real experiences from real people who found their perfect home with us</p>
+                    </div>
+                </AnimatedSection>
 
                 <div className="testimonials-grid">
-                    {testimonials.map((testimonial) => (
-                        <div key={testimonial.id} className="testimonial-bubble">
-                            <div className="bubble-content">
-                                <div className="quote-mark">"</div>
-                                <p className="testimonial-text">{testimonial.comment}</p>
-                                <div className="testimonial-author">
-                                    <div className="author-info">
-                                        <h4>{testimonial.name}</h4>
-                                        <span className="location">{testimonial.location}</span>
+                    {testimonials.map((testimonial, index) => (
+                        <AnimatedSection key={testimonial.id} delay={0.3 + index * 0.2}>
+                            <div className="testimonial-bubble">
+                                <div className="bubble-content">
+                                    <div className="quote-mark">"</div>
+                                    <p className="testimonial-text">{testimonial.comment}</p>
+                                    <div className="testimonial-author">
+                                        <div className="author-info">
+                                            <h4>{testimonial.name}</h4>
+                                            <span className="location">{testimonial.location}</span>
+                                        </div>
                                     </div>
                                 </div>
+                                <div className="bubble-tail"></div>
                             </div>
-                            <div className="bubble-tail"></div>
-                        </div>
+                        </AnimatedSection>
                     ))}
                 </div>
             </div>
