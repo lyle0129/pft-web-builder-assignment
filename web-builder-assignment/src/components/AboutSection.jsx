@@ -1,5 +1,5 @@
 import aboutPlaceholder from '../assets/about-placeholder.jpg';
-import { Award, TrendingUp } from 'lucide-react';
+import { Award, TrendingUp, Trophy, Home, MapPin } from 'lucide-react';
 import AnimatedSection from './AnimatedSection';
 
 const AboutSection = () => {
@@ -51,9 +51,10 @@ const AboutSection = () => {
                 <div className="space-y-6 xs:space-y-8">
                   <div>
                     <h3
-                      className="font-serif font-medium text-lg xs:text-xl sm:text-2xl mb-3 xs:mb-4"
+                      className="font-serif font-medium text-lg xs:text-xl sm:text-2xl mb-3 xs:mb-4 flex items-center gap-2 justify-center lg:justify-start"
                       style={{ color: 'var(--color-text-primary)' }}
                     >
+                      <Trophy size={24} style={{ color: 'var(--color-muted-gold)' }} />
                       Top Residential Sales Last 5 Years
                     </h3>
                     <p
@@ -67,9 +68,10 @@ const AboutSection = () => {
 
                   <div>
                     <h3
-                      className="font-serif font-medium text-lg xs:text-xl sm:text-2xl mb-3 xs:mb-4"
+                      className="font-serif font-medium text-lg xs:text-xl sm:text-2xl mb-3 xs:mb-4 flex items-center gap-2 justify-center lg:justify-start"
                       style={{ color: 'var(--color-text-primary)' }}
                     >
+                      <Home size={24} style={{ color: 'var(--color-muted-gold)' }} />
                       Don't Just List It... Get It SOLD!
                     </h3>
                     <p
@@ -82,9 +84,10 @@ const AboutSection = () => {
 
                   <div>
                     <h3
-                      className="font-serif font-medium text-lg xs:text-xl sm:text-2xl mb-3 xs:mb-4"
+                      className="font-serif font-medium text-lg xs:text-xl sm:text-2xl mb-3 xs:mb-4 flex items-center gap-2 justify-center lg:justify-start"
                       style={{ color: 'var(--color-text-primary)' }}
                     >
+                      <MapPin size={24} style={{ color: 'var(--color-muted-gold)' }} />
                       Guide to Buyers
                     </h3>
                     <p

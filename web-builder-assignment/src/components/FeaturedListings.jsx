@@ -2,11 +2,31 @@ import { useState } from 'react';
 import house1 from '../assets/house-1.jpg';
 import house2 from '../assets/house-2.jpg';
 import house3 from '../assets/house-3.jpg';
-import { Eye, ArrowRight, ChevronUp } from 'lucide-react';
+import { Eye, ArrowRight, ChevronUp, Search } from 'lucide-react';
 import AnimatedSection from './AnimatedSection';
 
 const FeaturedListings = () => {
   const [activeCard, setActiveCard] = useState(null);
+  const [showSearchBox, setShowSearchBox] = useState(false);
+  const [searchFilters, setSearchFilters] = useState({
+    location: '',
+    type: '',
+    sortBy: 'newest',
+    bedrooms: 'any',
+    bathrooms: 'any',
+    minPrice: '',
+    maxPrice: ''
+  });
+
+  const handleFilterChange = (field, value) => {
+    setSearchFilters(prev => ({ ...prev, [field]: value }));
+  };
+
+  const handleSearch = () => {
+    console.log('Searching with filters:', searchFilters);
+    // Add your search logic here
+  };
+
   const featuredListings = [
     {
       id: 1,
@@ -192,28 +212,331 @@ const FeaturedListings = () => {
         {/* ===== CTA ===== */}
         <AnimatedSection delay={0.9}>
           <div className="text-center mt-10 xs:mt-14 sm:mt-16 lg:mt-20">
-            <button
-              type="button"
-              aria-label="View all available luxury properties"
-              className="
-                inline-flex items-center gap-2
-                px-6 xs:px-8 sm:px-10 py-4
-                text-sm sm:text-base
-                uppercase tracking-wide
-                transition-all duration-300
-                hover:-translate-y-1 hover:opacity-90
-                active:scale-95
-                rounded-full
-              "
-              style={{
-                backgroundColor: 'var(--color-charcoal)',
-                color: 'var(--color-bg-primary)',
-                border: '1px solid var(--color-charcoal)',
-              }}
-            >
-              View All Properties
-              <ArrowRight size={16} />
-            </button>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <button
+                type="button"
+                aria-label="View all available luxury properties"
+                className="
+                  inline-flex items-center gap-2
+                  px-6 xs:px-8 sm:px-10 py-4
+                  text-sm sm:text-base
+                  uppercase tracking-wide
+                  transition-all duration-300
+                  hover:-translate-y-1 hover:opacity-90
+                  active:scale-95
+                  rounded-full
+                "
+                style={{
+                  backgroundColor: 'var(--color-charcoal)',
+                  color: 'var(--color-bg-primary)',
+                  border: '1px solid var(--color-charcoal)',
+                }}
+              >
+                View All Properties
+                <ArrowRight size={16} />
+              </button>
+
+              <button
+                type="button"
+                onClick={() => setShowSearchBox(!showSearchBox)}
+                aria-label="Toggle search listings"
+                aria-expanded={showSearchBox}
+                className="
+                  inline-flex items-center gap-2
+                  px-6 xs:px-8 sm:px-10 py-4
+                  text-sm sm:text-base
+                  uppercase tracking-wide
+                  transition-all duration-300
+                  hover:-translate-y-1 hover:opacity-90
+                  active:scale-95
+                  rounded-full
+                "
+                style={{
+                  backgroundColor: showSearchBox ? 'var(--color-charcoal)' : 'transparent',
+                  color: showSearchBox ? 'var(--color-bg-primary)' : 'var(--color-charcoal)',
+                  border: '1px solid var(--color-charcoal)',
+                }}
+              >
+                <Search size={16} />
+                Search Listings
+              </button>
+            </div>
+
+            {/* Search Box */}
+            {showSearchBox && (
+              <div 
+                className="
+                  mt-8 p-6 sm:p-8 rounded-2xl
+                  max-w-4xl mx-auto
+                  animate-fadeIn
+                "
+                style={{
+                  backgroundColor: 'var(--color-bg-primary)',
+                  border: '1px solid var(--color-border)',
+                  boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)'
+                }}
+              >
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
+                  {/* Location */}
+                  <div>
+                    <label 
+                      htmlFor="location"
+                      className="block text-sm font-medium mb-2"
+                      style={{ color: 'var(--color-text-primary)' }}
+                    >
+                      Location
+                    </label>
+                    <select
+                      id="location"
+                      value={searchFilters.location}
+                      onChange={(e) => handleFilterChange('location', e.target.value)}
+                      className="
+                        w-full px-4 py-2 rounded-lg
+                        transition-all duration-200
+                        focus:outline-none focus:ring-2
+                      "
+                      style={{
+                        backgroundColor: 'var(--color-bg-secondary)',
+                        color: 'var(--color-text-primary)',
+                        border: '1px solid var(--color-border)',
+                      }}
+                    >
+                      <option value="">All Locations</option>
+                      <option value="downtown">Downtown</option>
+                      <option value="suburban">Suburban</option>
+                      <option value="waterfront">Waterfront</option>
+                      <option value="countryside">Countryside</option>
+                      <option value="beachfront">Beachfront</option>
+                      <option value="mountain">Mountain</option>
+                      <option value="urban">Urban</option>
+                      <option value="rural">Rural</option>
+                    </select>
+                  </div>
+
+                  {/* Type */}
+                  <div>
+                    <label 
+                      htmlFor="type"
+                      className="block text-sm font-medium mb-2"
+                      style={{ color: 'var(--color-text-primary)' }}
+                    >
+                      Type
+                    </label>
+                    <select
+                      id="type"
+                      value={searchFilters.type}
+                      onChange={(e) => handleFilterChange('type', e.target.value)}
+                      className="
+                        w-full px-4 py-2 rounded-lg
+                        transition-all duration-200
+                        focus:outline-none focus:ring-2
+                      "
+                      style={{
+                        backgroundColor: 'var(--color-bg-secondary)',
+                        color: 'var(--color-text-primary)',
+                        border: '1px solid var(--color-border)',
+                      }}
+                    >
+                      <option value="">All Types</option>
+                      <option value="condo">Condo</option>
+                      <option value="house">House</option>
+                      <option value="penthouse">Penthouse</option>
+                      <option value="villa">Villa</option>
+                      <option value="estate">Estate</option>
+                      <option value="apartment">Apartment</option>
+                      <option value="townhouse">Townhouse</option>
+                      <option value="loft">Loft</option>
+                    </select>
+                  </div>
+
+                  {/* Sort By */}
+                  <div>
+                    <label 
+                      htmlFor="sortBy"
+                      className="block text-sm font-medium mb-2"
+                      style={{ color: 'var(--color-text-primary)' }}
+                    >
+                      Sort By
+                    </label>
+                    <select
+                      id="sortBy"
+                      value={searchFilters.sortBy}
+                      onChange={(e) => handleFilterChange('sortBy', e.target.value)}
+                      className="
+                        w-full px-4 py-2 rounded-lg
+                        transition-all duration-200
+                        focus:outline-none focus:ring-2
+                      "
+                      style={{
+                        backgroundColor: 'var(--color-bg-secondary)',
+                        color: 'var(--color-text-primary)',
+                        border: '1px solid var(--color-border)',
+                      }}
+                    >
+                      <option value="newest">Newest</option>
+                      <option value="oldest">Oldest</option>
+                      <option value="price-low-high">Least Expensive to Most</option>
+                      <option value="price-high-low">Most Expensive to Least</option>
+                      <option value="bedrooms-low-high">Bedrooms (Low to High)</option>
+                      <option value="bedrooms-high-low">Bedrooms (High to Low)</option>
+                      <option value="bathrooms-low-high">Bathrooms (Low to High)</option>
+                      <option value="bathrooms-high-low">Bathrooms (High to Low)</option>
+                    </select>
+                  </div>
+
+                  {/* Bedrooms */}
+                  <div>
+                    <label 
+                      htmlFor="bedrooms"
+                      className="block text-sm font-medium mb-2"
+                      style={{ color: 'var(--color-text-primary)' }}
+                    >
+                      Bedrooms
+                    </label>
+                    <select
+                      id="bedrooms"
+                      value={searchFilters.bedrooms}
+                      onChange={(e) => handleFilterChange('bedrooms', e.target.value)}
+                      className="
+                        w-full px-4 py-2 rounded-lg
+                        transition-all duration-200
+                        focus:outline-none focus:ring-2
+                      "
+                      style={{
+                        backgroundColor: 'var(--color-bg-secondary)',
+                        color: 'var(--color-text-primary)',
+                        border: '1px solid var(--color-border)',
+                      }}
+                    >
+                      <option value="any">Any Number</option>
+                      <option value="studio">Studio</option>
+                      <option value="1+">1+</option>
+                      <option value="2+">2+</option>
+                      <option value="3+">3+</option>
+                      <option value="4+">4+</option>
+                      <option value="5+">5+</option>
+                      <option value="6+">6+</option>
+                    </select>
+                  </div>
+
+                  {/* Bathrooms */}
+                  <div>
+                    <label 
+                      htmlFor="bathrooms"
+                      className="block text-sm font-medium mb-2"
+                      style={{ color: 'var(--color-text-primary)' }}
+                    >
+                      Baths
+                    </label>
+                    <select
+                      id="bathrooms"
+                      value={searchFilters.bathrooms}
+                      onChange={(e) => handleFilterChange('bathrooms', e.target.value)}
+                      className="
+                        w-full px-4 py-2 rounded-lg
+                        transition-all duration-200
+                        focus:outline-none focus:ring-2
+                      "
+                      style={{
+                        backgroundColor: 'var(--color-bg-secondary)',
+                        color: 'var(--color-text-primary)',
+                        border: '1px solid var(--color-border)',
+                      }}
+                    >
+                      <option value="any">Any Number</option>
+                      <option value="1+">1+</option>
+                      <option value="2+">2+</option>
+                      <option value="3+">3+</option>
+                      <option value="4+">4+</option>
+                      <option value="5+">5+</option>
+                      <option value="6+">6+</option>
+                    </select>
+                  </div>
+
+                  {/* Min Price */}
+                  <div>
+                    <label 
+                      htmlFor="minPrice"
+                      className="block text-sm font-medium mb-2"
+                      style={{ color: 'var(--color-text-primary)' }}
+                    >
+                      Min Price
+                    </label>
+                    <input
+                      id="minPrice"
+                      type="text"
+                      placeholder="$0"
+                      value={searchFilters.minPrice}
+                      onChange={(e) => handleFilterChange('minPrice', e.target.value)}
+                      className="
+                        w-full px-4 py-2 rounded-lg
+                        transition-all duration-200
+                        focus:outline-none focus:ring-2
+                      "
+                      style={{
+                        backgroundColor: 'var(--color-bg-secondary)',
+                        color: 'var(--color-text-primary)',
+                        border: '1px solid var(--color-border)',
+                      }}
+                    />
+                  </div>
+
+                  {/* Max Price */}
+                  <div>
+                    <label 
+                      htmlFor="maxPrice"
+                      className="block text-sm font-medium mb-2"
+                      style={{ color: 'var(--color-text-primary)' }}
+                    >
+                      Max Price
+                    </label>
+                    <input
+                      id="maxPrice"
+                      type="text"
+                      placeholder="Any"
+                      value={searchFilters.maxPrice}
+                      onChange={(e) => handleFilterChange('maxPrice', e.target.value)}
+                      className="
+                        w-full px-4 py-2 rounded-lg
+                        transition-all duration-200
+                        focus:outline-none focus:ring-2
+                      "
+                      style={{
+                        backgroundColor: 'var(--color-bg-secondary)',
+                        color: 'var(--color-text-primary)',
+                        border: '1px solid var(--color-border)',
+                      }}
+                    />
+                  </div>
+                </div>
+
+                {/* Search Button */}
+                <div className="text-center">
+                  <button
+                    type="button"
+                    onClick={handleSearch}
+                    className="
+                      inline-flex items-center gap-2
+                      px-8 py-3
+                      text-sm sm:text-base
+                      uppercase tracking-wide
+                      transition-all duration-300
+                      hover:-translate-y-1 hover:opacity-90
+                      active:scale-95
+                      rounded-full
+                    "
+                    style={{
+                      backgroundColor: 'var(--color-charcoal)',
+                      color: 'var(--color-bg-primary)',
+                      border: '1px solid var(--color-charcoal)',
+                    }}
+                  >
+                    <Search size={16} />
+                    Search Now
+                  </button>
+                </div>
+              </div>
+            )}
           </div>
         </AnimatedSection>
 
