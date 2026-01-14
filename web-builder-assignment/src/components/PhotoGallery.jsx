@@ -1,47 +1,54 @@
 import { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight, Play, Pause } from 'lucide-react';
 import AnimatedSection from './AnimatedSection';
+import gallery1 from '../assets/gallery (1).png';
+import gallery2 from '../assets/gallery (2).png';
+import gallery3 from '../assets/gallery (3).png';
+import gallery4 from '../assets/gallery (4).png';
+import gallery5 from '../assets/gallery (5).png';
+import gallery6 from '../assets/gallery (6).png';
+import gallery7 from '../assets/gallery (7).png';
 
 const galleryImages = [
   {
     id: 1,
-    image: "/src/assets/gallery (1).png",
+    image: gallery1,
     altText: "Sun-Filled Living Area with Scenic Views",
     caption: "Sun-Filled Living Area with Scenic Views",
   },
   {
     id: 2,
-    image: "/src/assets/gallery (2).png",
+    image: gallery2,
     altText: "Resort-Style Community with Golf & Mountain Views",
     caption: "Resort-Style Community with Golf & Mountain Views",
   },
   {
     id: 3,
-    image: "/src/assets/gallery (3).png",
+    image: gallery3,
     altText: "Resort-Style Pool-Equiped Living",
     caption: "Resort-Style Pool-Equiped Living",
   },
   {
     id: 4,
-    image: "/src/assets/gallery (4).png",
+    image: gallery4,
     altText: "Spacious Driveways",
     caption: "Spacious Driveways",
   },
   {
     id: 5,
-    image: "/src/assets/gallery (5).png",
+    image: gallery5,
     altText: "Outdoor community entertainment area",
     caption: "Outdoor community entertainment area",
   },
   {
     id: 6,
-    image: "/src/assets/gallery (6).png",
+    image: gallery6,
     altText: "Peaceful Environment",
     caption: "Peaceful Environment",
   },
   {
     id: 7,
-    image: "/src/assets/gallery (7).png",
+    image: gallery7,
     altText: "Excellent and Friendly Community",
     caption: "Excellent and Friendly Community",
   },
