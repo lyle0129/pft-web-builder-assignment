@@ -53,6 +53,7 @@ const Testimonials = () => {
 const TestimonialCard = ({ testimonial }) => {
     const textRef = useRef(null);
     const [isOverflowing, setIsOverflowing] = useState(false);
+    const [isExpanded, setIsExpanded] = useState(false);
 
     useEffect(() => {
         const checkOverflow = () => {
@@ -68,7 +69,19 @@ const TestimonialCard = ({ testimonial }) => {
     }, [testimonial.comment]);
 
     return (
-        <div className="testimonial-bubble">
+        <div
+            className={`testimonial-bubble ${isExpanded ? 'expanded' : ''}`}
+            onClick={() => setIsExpanded(!isExpanded)}
+            onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    setIsExpanded(!isExpanded);
+                }
+            }}
+            tabIndex={0}
+            role="button"
+            aria-expanded={isExpanded}
+        >
             <div className="bubble-content">
                 <div className="quote-mark">"</div>
                 <div className={`testimonial-text-wrapper ${isOverflowing ? 'has-overflow' : ''}`}>

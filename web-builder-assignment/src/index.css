@@ -407,14 +407,30 @@ Testimonials Section Styles */
   min-height: 380px;
   display: flex;
   flex-direction: column;
+  cursor: pointer;
 }
 
-.testimonial-bubble:hover {
+.testimonial-bubble:hover,
+.testimonial-bubble.expanded {
   transform: translateY(-5px);
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
 }
 
-.testimonial-bubble:hover .testimonial-text {
+/* Disable hover effects on touch devices */
+@media (hover: none) and (pointer: coarse) {
+  .testimonial-bubble:hover {
+    transform: none;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  }
+  
+  .testimonial-bubble.expanded {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  }
+}
+
+.testimonial-bubble:hover .testimonial-text,
+.testimonial-bubble.expanded .testimonial-text {
   max-height: 1000px;
 }
 
@@ -468,7 +484,8 @@ Testimonials Section Styles */
   opacity: 1;
 }
 
-.testimonial-bubble:hover .testimonial-text::after {
+.testimonial-bubble:hover .testimonial-text::after,
+.testimonial-bubble.expanded .testimonial-text::after {
   opacity: 0;
 }
 
@@ -482,7 +499,8 @@ Testimonials Section Styles */
   opacity: 1;
 }
 
-.testimonial-bubble:hover .testimonial-text-wrapper::after {
+.testimonial-bubble:hover .testimonial-text-wrapper::after,
+.testimonial-bubble.expanded .testimonial-text-wrapper::after {
   opacity: 0;
 }
 
@@ -504,11 +522,13 @@ Testimonials Section Styles */
   transition: transform 0.3s ease;
 }
 
-.testimonial-bubble:hover .read-more-indicator {
+.testimonial-bubble:hover .read-more-indicator,
+.testimonial-bubble.expanded .read-more-indicator {
   opacity: 0;
 }
 
-.testimonial-bubble:hover .chevron-icon {
+.testimonial-bubble:hover .chevron-icon,
+.testimonial-bubble.expanded .chevron-icon {
   transform: rotate(180deg);
 }
 
@@ -718,5 +738,20 @@ Testimonials Section Styles */
   
   .form-actions {
     flex-direction: column;
+  }
+}
+
+/* Featured Listings - Mobile Touch Support */
+@media (hover: none) and (pointer: coarse) {
+  /* Disable hover effects on touch devices for featured listings */
+  .group:hover {
+    transform: none !important;
+    box-shadow: none !important;
+  }
+  
+  /* Apply active state on click for touch devices */
+  .group.active {
+    transform: translateY(-4px) !important;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04) !important;
   }
 }

@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import house1 from '../assets/house-1.jpg';
 import house2 from '../assets/house-2.jpg';
 import house3 from '../assets/house-3.jpg';
@@ -5,6 +6,7 @@ import { Eye, ArrowRight, ChevronUp } from 'lucide-react';
 import AnimatedSection from './AnimatedSection';
 
 const FeaturedListings = () => {
+  const [activeCard, setActiveCard] = useState(null);
   const featuredListings = [
     {
       id: 1,
@@ -82,40 +84,53 @@ const FeaturedListings = () => {
           {featuredListings.map((listing, index) => (
             <AnimatedSection key={listing.id} delay={0.3 + index * 0.2}>
               <article
-                className="
+                className={`
                   group relative overflow-hidden
                   h-64 xs:h-72 sm:h-80 lg:h-96
                   transition-all duration-300
                   hover:-translate-y-1 hover:shadow-xl
                   rounded-2xl
-                "
+                  ${activeCard === listing.id ? 'active' : ''}
+                `}
                 style={{
                   backgroundImage: `url(${listing.image})`,
                   backgroundSize: 'cover',
                   backgroundPosition: 'center',
                   border: '1px solid var(--color-border)',
                 }}
+                onClick={() => setActiveCard(activeCard === listing.id ? null : listing.id)}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    setActiveCard(activeCard === listing.id ? null : listing.id);
+                  }
+                }}
+                tabIndex={0}
+                role="button"
+                aria-expanded={activeCard === listing.id}
               >
                 {/* Gradient overlay (does NOT wash out text) */}
                 <div
-                  className="
+                  className={`
                     absolute inset-0
                     bg-gradient-to-t
                     from-black/70 via-black/30 to-transparent
                     group-hover:from-black/80 group-hover:via-black/50
                     transition-all duration-300
-                  "
+                    ${activeCard === listing.id ? 'from-black/80 via-black/50' : ''}
+                  `}
                 />
 
                 {/* Content */}
                 <div
-                  className="
+                  className={`
                     absolute -bottom-25 xs:-bottom-24 left-0 right-0 z-10
                     flex flex-col items-center
                     text-center
                     transition-transform duration-300
                     group-hover:-translate-y-36
-                  "
+                    ${activeCard === listing.id ? '-translate-y-36' : ''}
+                  `}
                 >
                   {/* Title + Chevron */}
                   <div className="flex items-center gap-2 mb-2">
@@ -135,11 +150,12 @@ const FeaturedListings = () => {
 
                   {/* Details */}
                   <div
-                    className="
+                    className={`
                       opacity-0 translate-y-6
                       group-hover:opacity-100 group-hover:translate-y-0
                       transition-all duration-300 ease-out
-                    "
+                      ${activeCard === listing.id ? 'opacity-100 translate-y-0' : ''}
+                    `}
                   >
                     <div className="font-serif text-xl xs:text-2xl mb-2" style={{ color: '#ffffff' }}>
                       {listing.price}
