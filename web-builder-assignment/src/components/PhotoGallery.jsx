@@ -133,7 +133,7 @@ const PhotoGallery = () => {
                          px-4 xs:px-2 sm:px-0"
               style={{ color: 'var(--color-text-secondary)' }}
             >
-              Explore our curated collection of luxury estates and exceptional properties.
+              Where shared spaces and community life are brought into focus.
             </p>
           </div>
         </AnimatedSection>

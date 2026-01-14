@@ -267,7 +267,7 @@ const FeaturedListings = () => {
               <div 
                 className="
                   mt-8 p-6 sm:p-8 rounded-2xl
-                  max-w-4xl mx-auto
+                  max-w-6xl mx-auto
                   animate-fadeIn
                 "
                 style={{
@@ -276,7 +276,8 @@ const FeaturedListings = () => {
                   boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)'
                 }}
               >
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
+                {/* Row 1 - 4 columns */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-4">
                   {/* Location */}
                   <div>
                     <label 
@@ -418,7 +419,10 @@ const FeaturedListings = () => {
                       <option value="6+">6+</option>
                     </select>
                   </div>
+                </div>
 
+                {/* Row 2 - 3 inputs + 1 button */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
                   {/* Bathrooms */}
                   <div>
                     <label 
@@ -508,32 +512,33 @@ const FeaturedListings = () => {
                       }}
                     />
                   </div>
-                </div>
 
-                {/* Search Button */}
-                <div className="text-center">
-                  <button
-                    type="button"
-                    onClick={handleSearch}
-                    className="
-                      inline-flex items-center gap-2
-                      px-8 py-3
-                      text-sm sm:text-base
-                      uppercase tracking-wide
-                      transition-all duration-300
-                      hover:-translate-y-1 hover:opacity-90
-                      active:scale-95
-                      rounded-full
-                    "
-                    style={{
-                      backgroundColor: 'var(--color-charcoal)',
-                      color: 'var(--color-bg-primary)',
-                      border: '1px solid var(--color-charcoal)',
-                    }}
-                  >
-                    <Search size={16} />
-                    Search Now
-                  </button>
+                  {/* Search Button */}
+                  <div className="flex items-end">
+                    <button
+                      type="button"
+                      onClick={handleSearch}
+                      className="
+                        w-full
+                        inline-flex items-center justify-center gap-2
+                        px-6 py-2
+                        text-sm sm:text-base
+                        uppercase tracking-wide
+                        transition-all duration-300
+                        hover:-translate-y-1 hover:opacity-90
+                        active:scale-95
+                        rounded-lg
+                      "
+                      style={{
+                        backgroundColor: 'var(--color-charcoal)',
+                        color: 'var(--color-bg-primary)',
+                        border: '1px solid var(--color-charcoal)',
+                      }}
+                    >
+                      <Search size={16} />
+                      Search Now
+                    </button>
+                  </div>
                 </div>
               </div>
             )}
