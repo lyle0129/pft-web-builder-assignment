@@ -404,6 +404,9 @@ Testimonials Section Styles */
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
   overflow: hidden;
+  min-height: 380px;
+  display: flex;
+  flex-direction: column;
 }
 
 .testimonial-bubble:hover {
@@ -411,9 +414,16 @@ Testimonials Section Styles */
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
 }
 
+.testimonial-bubble:hover .testimonial-text {
+  max-height: 1000px;
+}
+
 .bubble-content {
   padding: 32px;
   position: relative;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .quote-mark {
@@ -435,6 +445,71 @@ Testimonials Section Styles */
   font-style: italic;
   position: relative;
   z-index: 1;
+  max-height: 150px;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+}
+
+.testimonial-text::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.9) 50%, white);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 2;
+}
+
+.has-overflow .testimonial-text::after {
+  opacity: 1;
+}
+
+.testimonial-bubble:hover .testimonial-text::after {
+  opacity: 0;
+}
+
+.testimonial-text-wrapper {
+  position: relative;
+  min-height: 182px;
+  flex: 1;
+}
+
+.testimonial-text-wrapper.has-overflow::after {
+  opacity: 1;
+}
+
+.testimonial-bubble:hover .testimonial-text-wrapper::after {
+  opacity: 0;
+}
+
+.read-more-indicator {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--color-muted-gold);
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-top: 8px;
+  font-style: normal;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+  min-height: 24px;
+}
+
+.chevron-icon {
+  transition: transform 0.3s ease;
+}
+
+.testimonial-bubble:hover .read-more-indicator {
+  opacity: 0;
+}
+
+.testimonial-bubble:hover .chevron-icon {
+  transform: rotate(180deg);
 }
 
 .testimonial-author {

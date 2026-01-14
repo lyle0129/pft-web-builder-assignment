@@ -1,4 +1,5 @@
 
+import { useEffect, useRef, useState } from 'react';
 import AnimatedSection from './AnimatedSection';
 
 const Testimonials = () => {
@@ -40,24 +41,54 @@ const Testimonials = () => {
                 <div className="testimonials-grid">
                     {testimonials.map((testimonial, index) => (
                         <AnimatedSection key={testimonial.id} delay={0.3 + index * 0.2}>
-                            <div className="testimonial-bubble">
-                                <div className="bubble-content">
-                                    <div className="quote-mark">"</div>
-                                    <p className="testimonial-text">{testimonial.comment}</p>
-                                    <div className="testimonial-author">
-                                        <div className="author-info">
-                                            <h4>{testimonial.name}</h4>
-                                            <span className="location">{testimonial.location}</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="bubble-tail"></div>
-                            </div>
+                            <TestimonialCard testimonial={testimonial} />
                         </AnimatedSection>
                     ))}
                 </div>
             </div>
         </section>
+    );
+};
+
+const TestimonialCard = ({ testimonial }) => {
+    const textRef = useRef(null);
+    const [isOverflowing, setIsOverflowing] = useState(false);
+
+    useEffect(() => {
+        const checkOverflow = () => {
+            if (textRef.current) {
+                const isOverflow = textRef.current.scrollHeight > textRef.current.clientHeight;
+                setIsOverflowing(isOverflow);
+            }
+        };
+
+        checkOverflow();
+        window.addEventListener('resize', checkOverflow);
+        return () => window.removeEventListener('resize', checkOverflow);
+    }, [testimonial.comment]);
+
+    return (
+        <div className="testimonial-bubble">
+            <div className="bubble-content">
+                <div className="quote-mark">"</div>
+                <div className={`testimonial-text-wrapper ${isOverflowing ? 'has-overflow' : ''}`}>
+                    <p ref={textRef} className="testimonial-text">{testimonial.comment}</p>
+                    <div className="read-more-indicator" style={{ visibility: isOverflowing ? 'visible' : 'hidden' }}>
+                        <span>Read more</span>
+                        <svg className="chevron-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M4 6L8 10L12 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                        </svg>
+                    </div>
+                </div>
+                <div className="testimonial-author">
+                    <div className="author-info">
+                        <h4>{testimonial.name}</h4>
+                        <span className="location">{testimonial.location}</span>
+                    </div>
+                </div>
+            </div>
+            <div className="bubble-tail"></div>
+        </div>
     );
 };
 
