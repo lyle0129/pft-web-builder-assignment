@@ -114,8 +114,8 @@ const PhotoGallery = () => {
           <div className="text-center mb-10 xs:mb-14 sm:mb-16 lg:mb-20">
             <h2
               id="gallery-heading"
-              className="font-serif font-light tracking-tight
-                         text-2xl xs:text-3xl sm:text-4xl lg:text-5xl mb-3 xs:mb-5
+              className="font-serif font-semibold tracking-tight
+                         text-3xl xs:text-4xl sm:text-5xl lg:text-6xl mb-3 xs:mb-5
                          px-2 xs:px-0"
               style={{ color: 'var(--color-text-primary)' }}
             >

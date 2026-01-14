@@ -15,8 +15,8 @@ const CallToAction = () => {
             <h2
               id="cta-heading"
               className="
-                font-serif font-light tracking-tight leading-tight
-                text-2xl xs:text-3xl sm:text-4xl lg:text-5xl
+                font-serif font-semibold tracking-tight leading-tight
+                text-3xl xs:text-4xl sm:text-5xl lg:text-6xl
                 px-2 xs:px-0
               "
               style={{ color: 'var(--color-text-primary)' }}

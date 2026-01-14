@@ -46,8 +46,8 @@ const FeaturedListings = () => {
             <h2
               id="featured-heading"
               className="
-                font-serif font-light tracking-tight
-                text-2xl xs:text-3xl sm:text-4xl lg:text-5xl
+                font-serif font-semibold tracking-tight
+                text-3xl xs:text-4xl sm:text-5xl lg:text-6xl
                 mb-3 xs:mb-5
                 px-2 xs:px-0
               "

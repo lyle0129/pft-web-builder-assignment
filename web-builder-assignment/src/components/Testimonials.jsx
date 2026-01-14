@@ -6,21 +6,21 @@ const Testimonials = () => {
     const testimonials = [
         {
             id: 1,
-            name: "Sarah Johnson",
-            location: "Downtown Seattle",
-            comment: "Amazing service! They helped us find our dream home in just two weeks. The team was professional and really understood what we were looking for."
+            name: "Tina H.",
+            location: "Pahrump, NV",
+            comment: "I had a weekend to find a home to buy. I was from another state, didn't know anyone. I had very specific needs (golf course home, pool). There weren't any homes on the course at that time, but she actually found TWO homes that fit my needs - neither were active listings! She approached the owner of the home and they sold! Happy. The entire transaction was handled with professionally and we closed earlier than contracted!. Marci also found my second home (income property) and I could not be happier. Highly recommend as a buying or listing agent."
         },
         {
             id: 2,
-            name: "Michael Chen",
+            name: "Brent R.",
             location: "Bellevue, WA",
-            comment: "Outstanding experience from start to finish. The market knowledge and negotiation skills saved us thousands. Highly recommend!"
+            comment: "Marci is by far the most professional realtor I have ever worked with. I have purchased about 15 homes in all and have had many different realtors involved in the transactions. Mostly good experiences but none compare to the professionalism that was given by Marci. Responsive and offered great advice."
         },
         {
             id: 3,
-            name: "Emily Rodriguez",
-            location: "Capitol Hill",
-            comment: "First-time home buyer here, and they made the process so smooth. Always available to answer questions and guide us through every step."
+            name: "Teresa L.",
+            location: "Redondo Beach, CA",
+            comment: "Professional, friendly and knows her profession well. Pahrump is lucky to have her 30+ years of experience. I highly recommend Marci and Lauren. Best of luck with your new endeavor."
         }
     ];
 
@@ -29,7 +29,10 @@ const Testimonials = () => {
             <div className="container">
                 <AnimatedSection delay={0.1}>
                     <div className="testimonials-header">
-                        <h2>What Our Clients Say</h2>
+                        <h2>Client testimonials</h2>
+                        <div className="flex justify-center mb-4 xs:mb-6">
+                            <span className="w-14 h-px" style={{ backgroundColor: 'var(--color-muted-gold)' }} />
+                        </div>
                         <p>Real experiences from real people who found their perfect home with us</p>
                     </div>
                 </AnimatedSection>
