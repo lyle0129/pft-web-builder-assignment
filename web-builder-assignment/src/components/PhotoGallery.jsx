@@ -188,6 +188,7 @@ const PhotoGallery = () => {
                   transition-all duration-300
                   focus-visible:ring-2 focus-visible:ring-white/60
                   touch-manipulation
+                  rounded-full
                 "
               >
                 <ChevronLeft size={20} className="text-white" />
@@ -206,6 +207,7 @@ const PhotoGallery = () => {
                   transition-all duration-300
                   focus-visible:ring-2 focus-visible:ring-white/60
                   touch-manipulation
+                  rounded-full
                 "
               >
                 <ChevronRight size={20} className="text-white" />
@@ -225,6 +227,7 @@ const PhotoGallery = () => {
                   transition-all duration-300
                   focus-visible:ring-2 focus-visible:ring-white/60
                   touch-manipulation
+                  rounded-full
                 "
               >
                 {isPlaying ? (
@@ -249,6 +252,7 @@ const PhotoGallery = () => {
                     min-w-[44px] min-h-[44px]
                     transition-all duration-300
                     touch-manipulation
+                    rounded-lg
                     ${index === currentImageIndex ? 'shadow-md' : 'hover:opacity-70'}
                   `}
                   style={{

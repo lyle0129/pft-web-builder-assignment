@@ -63,6 +63,7 @@ const CallToAction = () => {
                   touch-manipulation
                   active:scale-95
                   border
+                  rounded-full
                 "
                 style={{
                   backgroundColor: 'var(--color-charcoal)',

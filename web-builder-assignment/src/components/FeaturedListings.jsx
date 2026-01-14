@@ -87,6 +87,7 @@ const FeaturedListings = () => {
                   h-64 xs:h-72 sm:h-80 lg:h-96
                   transition-all duration-300
                   hover:-translate-y-1 hover:shadow-xl
+                  rounded-2xl
                 "
                 style={{
                   backgroundImage: `url(${listing.image})`,
@@ -186,6 +187,7 @@ const FeaturedListings = () => {
                 transition-all duration-300
                 hover:-translate-y-1 hover:opacity-90
                 active:scale-95
+                rounded-full
               "
               style={{
                 backgroundColor: 'var(--color-charcoal)',
