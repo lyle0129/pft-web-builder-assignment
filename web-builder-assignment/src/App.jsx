@@ -1,5 +1,6 @@
 import HeroSection from './components/HeroSection';
 import AboutSection from './components/AboutSection';
+import Services from './components/Services';
 import FeaturedListings from './components/FeaturedListings';
 import PhotoGallery from './components/PhotoGallery';
 import Testimonials from './components/Testimonials';
@@ -18,6 +19,7 @@ function App() {
       <main id="main-content" className="w-full">
         <HeroSection />
         <AboutSection />
+        <Services />
         <Testimonials />
         <FeaturedListings />
         <PhotoGallery />
