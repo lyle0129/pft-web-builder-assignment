@@ -31,8 +31,8 @@ function Services() {
                     <div className="text-center mb-10 xs:mb-14 sm:mb-16 lg:mb-20">
                         <h2
                             id="services-heading"
-                            className="font-serif font-semibold tracking-tight text-3xl xs:text-4xl sm:text-5xl lg:text-6xl mb-3 xs:mb-5 px-2 xs:px-0"
-                            style={{ color: 'var(--color-text-primary)' }}
+                            className="font-serif tracking-tight text-3xl xs:text-4xl sm:text-5xl lg:text-6xl mb-3 xs:mb-5 px-2 xs:px-0"
+                            style={{ color: 'var(--color-text-primary)', fontWeight: 400 }}
                         >
                             Our Services
                         </h2>
@@ -42,8 +42,8 @@ function Services() {
                         </div>
 
                         <p
-                            className="max-w-2xl mx-auto text-sm xs:text-base sm:text-lg leading-relaxed font-light px-4 xs:px-2 sm:px-0"
-                            style={{ color: 'var(--color-text-secondary)' }}
+                            className="max-w-2xl mx-auto text-sm xs:text-base sm:text-lg leading-relaxed px-4 xs:px-2 sm:px-0"
+                            style={{ color: 'var(--color-text-secondary)', fontWeight: 400 }}
                         >
                             Comprehensive real estate solutions tailored to your needs
                         </p>
@@ -73,14 +73,14 @@ function Services() {
                                         />
                                     </div>
                                     <h3
-                                        className="font-serif text-xl xs:text-2xl font-medium text-center mb-4"
-                                        style={{ color: 'var(--color-text-primary)' }}
+                                        className="font-serif text-xl xs:text-2xl text-center mb-4"
+                                        style={{ color: 'var(--color-text-primary)', fontWeight: 400 }}
                                     >
                                         {service.title}
                                     </h3>
                                     <p
-                                        className="text-center text-sm xs:text-base leading-relaxed font-light flex-grow"
-                                        style={{ color: 'var(--color-text-secondary)' }}
+                                        className="text-center text-sm xs:text-base leading-relaxed flex-grow"
+                                        style={{ color: 'var(--color-text-secondary)', fontWeight: 400 }}
                                     >
                                         {service.description}
                                     </p>

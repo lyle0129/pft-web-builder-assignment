@@ -114,10 +114,10 @@ const PhotoGallery = () => {
           <div className="text-center mb-10 xs:mb-14 sm:mb-16 lg:mb-20">
             <h2
               id="gallery-heading"
-              className="font-serif font-semibold tracking-tight
+              className="font-serif tracking-tight
                          text-3xl xs:text-4xl sm:text-5xl lg:text-6xl mb-3 xs:mb-5
                          px-2 xs:px-0"
-              style={{ color: 'var(--color-text-primary)' }}
+              style={{ color: 'var(--color-text-primary)', fontWeight: 400 }}
             >
               Community Gallery
             </h2>
@@ -129,9 +129,9 @@ const PhotoGallery = () => {
             <p
               className="max-w-2xl mx-auto
                          text-sm xs:text-base sm:text-lg
-                         leading-relaxed font-light
+                         leading-relaxed
                          px-4 xs:px-2 sm:px-0"
-              style={{ color: 'var(--color-text-secondary)' }}
+              style={{ color: 'var(--color-text-secondary)', fontWeight: 400 }}
             >
               Where shared spaces and community life are brought into focus.
             </p>
@@ -157,17 +157,17 @@ const PhotoGallery = () => {
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent">
                 <div className="absolute bottom-4 xs:bottom-6 sm:bottom-8 left-4 xs:left-6 right-4 xs:right-6 text-center">
                   <div className="bg-black/60 backdrop-blur-sm rounded-lg px-4 py-3 border border-white/30">
-                    <h3 className="font-serif font-light
+                    <h3 className="font-serif
                                    text-lg xs:text-xl sm:text-2xl lg:text-3xl mb-2
                                    tracking-wide drop-shadow-lg"
-                      style={{ color: '#ffffff' }}>
+                      style={{ color: '#ffffff', fontWeight: 300 }}>
                       {galleryImages[currentImageIndex].caption}
                     </h3>
                     <div className="flex justify-center mb-2">
                       <span className="w-8 h-px bg-white/80" />
                     </div>
-                    <p className="text-sm sm:text-base font-light tracking-wide drop-shadow-lg"
-                      style={{ color: '#ffffff' }}>
+                    <p className="text-sm sm:text-base tracking-wide drop-shadow-lg"
+                      style={{ color: '#ffffff', fontWeight: 400 }}>
                       {currentImageIndex + 1} of {galleryImages.length}
                     </p>
                   </div>

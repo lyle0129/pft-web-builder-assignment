@@ -36,8 +36,8 @@ const AboutSection = () => {
                 <div className="space-y-3 xs:space-y-5">
                   <h2
                     id="about-heading"
-                    className="font-serif font-semibold tracking-tight leading-tight text-3xl xs:text-4xl sm:text-5xl lg:text-6xl"
-                    style={{ color: 'var(--color-text-primary)' }}
+                    className="font-serif tracking-tight leading-tight text-3xl xs:text-4xl sm:text-5xl lg:text-6xl"
+                    style={{ color: 'var(--color-text-primary)', fontWeight: 400 }}
                   >
                     Professional Excellence
                   </h2>
@@ -51,15 +51,15 @@ const AboutSection = () => {
                 <div className="space-y-6 xs:space-y-8">
                   <div>
                     <h3
-                      className="font-serif font-medium text-lg xs:text-xl sm:text-2xl mb-3 xs:mb-4 flex items-center gap-2 justify-center lg:justify-start"
-                      style={{ color: 'var(--color-text-primary)' }}
+                      className="font-serif text-lg xs:text-xl sm:text-2xl mb-3 xs:mb-4 flex items-center gap-2 justify-center lg:justify-start"
+                      style={{ color: 'var(--color-text-primary)', fontWeight: 400 }}
                     >
                       <Trophy size={24} style={{ color: 'var(--color-muted-gold)' }} />
                       Top Residential Sales Last 5 Years
                     </h3>
                     <p
-                      className="text-sm xs:text-base sm:text-lg leading-relaxed font-light"
-                      style={{ color: 'var(--color-text-secondary)' }}
+                      className="text-sm xs:text-base sm:text-lg leading-relaxed"
+                      style={{ color: 'var(--color-text-secondary)', fontWeight: 400 }}
                     >
                       We helped nearly 90 clients in 2021, and closed $28.5 million in sales!
                       Our team works hard every day to grow and learn, so that we may continue to excel in our market. Our clients deserve our best, and we want to make sure our best is better every year.
@@ -68,15 +68,15 @@ const AboutSection = () => {
 
                   <div>
                     <h3
-                      className="font-serif font-medium text-lg xs:text-xl sm:text-2xl mb-3 xs:mb-4 flex items-center gap-2 justify-center lg:justify-start"
-                      style={{ color: 'var(--color-text-primary)' }}
+                      className="font-serif text-lg xs:text-xl sm:text-2xl mb-3 xs:mb-4 flex items-center gap-2 justify-center lg:justify-start"
+                      style={{ color: 'var(--color-text-primary)', fontWeight: 400 }}
                     >
                       <Home size={24} style={{ color: 'var(--color-muted-gold)' }} />
                       Don't Just List It... Get It SOLD!
                     </h3>
                     <p
-                      className="text-sm xs:text-base sm:text-lg leading-relaxed font-light"
-                      style={{ color: 'var(--color-text-secondary)' }}
+                      className="text-sm xs:text-base sm:text-lg leading-relaxed"
+                      style={{ color: 'var(--color-text-secondary)', fontWeight: 400 }}
                     >
                       We exhaust every avenue to ensure our listings are at the fingertips of every possible buyer, getting you top dollar for your home.
                     </p>
@@ -84,15 +84,15 @@ const AboutSection = () => {
 
                   <div>
                     <h3
-                      className="font-serif font-medium text-lg xs:text-xl sm:text-2xl mb-3 xs:mb-4 flex items-center gap-2 justify-center lg:justify-start"
-                      style={{ color: 'var(--color-text-primary)' }}
+                      className="font-serif text-lg xs:text-xl sm:text-2xl mb-3 xs:mb-4 flex items-center gap-2 justify-center lg:justify-start"
+                      style={{ color: 'var(--color-text-primary)', fontWeight: 400 }}
                     >
                       <MapPin size={24} style={{ color: 'var(--color-muted-gold)' }} />
                       Guide to Buyers
                     </h3>
                     <p
-                      className="text-sm xs:text-base sm:text-lg leading-relaxed font-light"
-                      style={{ color: 'var(--color-text-secondary)' }}
+                      className="text-sm xs:text-base sm:text-lg leading-relaxed"
+                      style={{ color: 'var(--color-text-secondary)', fontWeight: 400 }}
                     >
                       Nobody knows the market like we do. Enjoy having a pro at your service. Market analysis, upgrade lists, contractors on speed dial, and more!
                     </p>
@@ -106,15 +106,15 @@ const AboutSection = () => {
                       <div className="flex items-center justify-center lg:justify-start gap-2 mb-1">
                         <Award size={20} style={{ color: 'var(--color-muted-gold)' }} />
                         <div
-                          className="text-2xl xs:text-3xl font-serif font-light"
-                          style={{ color: 'var(--color-text-primary)' }}
+                          className="text-2xl xs:text-3xl font-serif"
+                          style={{ color: 'var(--color-text-primary)', fontWeight: 300 }}
                         >
                           30+
                         </div>
                       </div>
                       <div
-                        className="text-xs font-medium uppercase tracking-widest"
-                        style={{ color: 'var(--color-text-secondary)' }}
+                        className="text-xs uppercase tracking-widest"
+                        style={{ color: 'var(--color-text-secondary)', fontWeight: 400 }}
                       >
                         Years Experience
                       </div>
@@ -124,15 +124,15 @@ const AboutSection = () => {
                       <div className="flex items-center justify-center lg:justify-start gap-2 mb-1">
                         <TrendingUp size={20} style={{ color: 'var(--color-muted-gold)' }} />
                         <div
-                          className="text-2xl xs:text-3xl font-serif font-light"
-                          style={{ color: 'var(--color-text-primary)' }}
+                          className="text-2xl xs:text-3xl font-serif"
+                          style={{ color: 'var(--color-text-primary)', fontWeight: 300 }}
                         >
                           $50M+
                         </div>
                       </div>
                       <div
-                        className="text-xs font-medium uppercase tracking-widest"
-                        style={{ color: 'var(--color-text-secondary)' }}
+                        className="text-xs uppercase tracking-widest"
+                        style={{ color: 'var(--color-text-secondary)', fontWeight: 400 }}
                       >
                         Sales Volume
                       </div>

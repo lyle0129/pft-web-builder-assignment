@@ -56,7 +56,11 @@ main {
   box-sizing: border-box;
 }
 
-/* Luxury Typography Hierarchy */
+/* Luxury Typography Hierarchy - 3 Font Styles */
+/* Style 1: Heading (Serif, 400) - Major headings */
+/* Style 2: Subheading (Serif, 300) - Secondary headings */
+/* Style 3: Body (Sans-serif, 400) - All body text */
+
 h1,
 h2,
 h3,
@@ -118,7 +122,7 @@ span {
 /* Sophisticated button styling with touch optimization */
 button {
   font-family: var(--font-sans);
-  font-weight: 500;
+  font-weight: 400;
   cursor: pointer;
   border: none;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -182,7 +186,7 @@ select:focus-visible {
   text-decoration: none;
   border-radius: 4px;
   z-index: 1000;
-  font-weight: 600;
+  font-weight: 400;
 }
 
 .skip-link:focus {
@@ -375,7 +379,7 @@ Testimonials Section Styles */
   border: none;
   padding: 12px 24px;
   border-radius: 9999px;
-  font-weight: 500;
+  font-weight: 400;
   cursor: pointer;
   transition: all 0.3s ease;
   font-size: 1rem;
@@ -510,7 +514,7 @@ Testimonials Section Styles */
   gap: 6px;
   color: var(--color-muted-gold);
   font-size: 0.875rem;
-  font-weight: 500;
+  font-weight: 400;
   margin-top: 8px;
   font-style: normal;
   opacity: 1;
@@ -542,7 +546,7 @@ Testimonials Section Styles */
 
 .author-info h4 {
   font-size: 1.125rem;
-  font-weight: 600;
+  font-weight: 400;
   color: var(--color-text-primary);
   margin: 0 0 4px 0;
 }
@@ -565,7 +569,7 @@ Testimonials Section Styles */
   font-size: 0.875rem;
   cursor: pointer;
   transition: all 0.2s ease;
-  font-weight: 500;
+  font-weight: 400;
 }
 
 .edit-btn {
@@ -627,7 +631,7 @@ Testimonials Section Styles */
 
 .testimonial-form h3 {
   font-size: 1.5rem;
-  font-weight: 600;
+  font-weight: 400;
   color: var(--color-text-primary);
   margin-bottom: 24px;
   text-align: center;
@@ -639,7 +643,7 @@ Testimonials Section Styles */
 
 .form-group label {
   display: block;
-  font-weight: 500;
+  font-weight: 400;
   color: var(--color-text-primary);
   margin-bottom: 8px;
   font-size: 0.875rem;
@@ -680,7 +684,7 @@ Testimonials Section Styles */
   padding: 12px 24px;
   border: none;
   border-radius: 9999px;
-  font-weight: 500;
+  font-weight: 400;
   cursor: pointer;
   transition: all 0.2s ease;
   font-size: 1rem;

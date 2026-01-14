@@ -30,13 +30,13 @@ const Testimonials = () => {
             <div className="container">
                 <AnimatedSection delay={0.1}>
                     <div className="testimonials-header">
-                        <h2 className="font-serif font-semibold tracking-tight text-3xl xs:text-4xl sm:text-5xl lg:text-6xl mb-3 xs:mb-5 px-2 xs:px-0">
+                        <h2 className="font-serif tracking-tight text-3xl xs:text-4xl sm:text-5xl lg:text-6xl mb-3 xs:mb-5 px-2 xs:px-0" style={{ fontWeight: 400 }}>
                             Client Testimonials
                         </h2>
                         <div className="flex justify-center mb-4 xs:mb-6">
                             <span className="w-14 h-px" style={{ backgroundColor: 'var(--color-muted-gold)' }} />
                         </div>
-                        <p className="max-w-2xl mx-auto text-sm xs:text-base sm:text-lg leading-relaxed font-light px-4 xs:px-2 sm:px-0">
+                        <p className="max-w-2xl mx-auto text-sm xs:text-base sm:text-lg leading-relaxed px-4 xs:px-2 sm:px-0" style={{ fontWeight: 400 }}>
                             Real experiences from real people who found their perfect home with us
                         </p>
                     </div>

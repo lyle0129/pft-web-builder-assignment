@@ -68,12 +68,12 @@ const FeaturedListings = () => {
             <h2
               id="featured-heading"
               className="
-                font-serif font-semibold tracking-tight
+                font-serif tracking-tight
                 text-3xl xs:text-4xl sm:text-5xl lg:text-6xl
                 mb-3 xs:mb-5
                 px-2 xs:px-0
               "
-              style={{ color: 'var(--color-text-primary)' }}
+              style={{ color: 'var(--color-text-primary)', fontWeight: 400 }}
             >
               Featured Properties
             </h2>
@@ -89,10 +89,10 @@ const FeaturedListings = () => {
               className="
                 max-w-2xl mx-auto
                 text-sm xs:text-base sm:text-lg
-                leading-relaxed font-light
+                leading-relaxed
                 px-4 xs:px-2 sm:px-0
               "
-              style={{ color: 'var(--color-text-secondary)' }}
+              style={{ color: 'var(--color-text-secondary)', fontWeight: 400 }}
             >
               Discover our carefully curated selection of exceptional luxury properties.
             </p>
@@ -282,8 +282,8 @@ const FeaturedListings = () => {
                   <div>
                     <label 
                       htmlFor="location"
-                      className="block text-sm font-medium mb-2"
-                      style={{ color: 'var(--color-text-primary)' }}
+                      className="block text-sm mb-2"
+                      style={{ color: 'var(--color-text-primary)', fontWeight: 400 }}
                     >
                       Location
                     </label>
@@ -318,8 +318,8 @@ const FeaturedListings = () => {
                   <div>
                     <label 
                       htmlFor="type"
-                      className="block text-sm font-medium mb-2"
-                      style={{ color: 'var(--color-text-primary)' }}
+                      className="block text-sm mb-2"
+                      style={{ color: 'var(--color-text-primary)', fontWeight: 400 }}
                     >
                       Type
                     </label>
@@ -354,8 +354,8 @@ const FeaturedListings = () => {
                   <div>
                     <label 
                       htmlFor="sortBy"
-                      className="block text-sm font-medium mb-2"
-                      style={{ color: 'var(--color-text-primary)' }}
+                      className="block text-sm mb-2"
+                      style={{ color: 'var(--color-text-primary)', fontWeight: 400 }}
                     >
                       Sort By
                     </label>
@@ -389,8 +389,8 @@ const FeaturedListings = () => {
                   <div>
                     <label 
                       htmlFor="bedrooms"
-                      className="block text-sm font-medium mb-2"
-                      style={{ color: 'var(--color-text-primary)' }}
+                      className="block text-sm mb-2"
+                      style={{ color: 'var(--color-text-primary)', fontWeight: 400 }}
                     >
                       Bedrooms
                     </label>
@@ -427,8 +427,8 @@ const FeaturedListings = () => {
                   <div>
                     <label 
                       htmlFor="bathrooms"
-                      className="block text-sm font-medium mb-2"
-                      style={{ color: 'var(--color-text-primary)' }}
+                      className="block text-sm mb-2"
+                      style={{ color: 'var(--color-text-primary)', fontWeight: 400 }}
                     >
                       Baths
                     </label>
@@ -461,8 +461,8 @@ const FeaturedListings = () => {
                   <div>
                     <label 
                       htmlFor="minPrice"
-                      className="block text-sm font-medium mb-2"
-                      style={{ color: 'var(--color-text-primary)' }}
+                      className="block text-sm mb-2"
+                      style={{ color: 'var(--color-text-primary)', fontWeight: 400 }}
                     >
                       Min Price
                     </label>
@@ -489,8 +489,8 @@ const FeaturedListings = () => {
                   <div>
                     <label 
                       htmlFor="maxPrice"
-                      className="block text-sm font-medium mb-2"
-                      style={{ color: 'var(--color-text-primary)' }}
+                      className="block text-sm mb-2"
+                      style={{ color: 'var(--color-text-primary)', fontWeight: 400 }}
                     >
                       Max Price
                     </label>

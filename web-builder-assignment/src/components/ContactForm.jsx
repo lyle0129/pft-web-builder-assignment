@@ -67,7 +67,7 @@ const ContactForm = () => {
   return (
     <>
       <form onSubmit={handleSubmit} className="w-full max-w-md mx-auto space-y-4">
-        <h3 className="text-xl font-serif font-light tracking-wide mb-6 text-center" style={{ color: 'var(--color-text-primary)' }}>
+        <h3 className="text-xl font-serif tracking-wide mb-6 text-center" style={{ color: 'var(--color-text-primary)', fontWeight: 300 }}>
           Send Message
         </h3>
         
@@ -149,11 +149,12 @@ const ContactForm = () => {
 
         <button
           type="submit"
-          className="w-full inline-flex items-center justify-center gap-2 px-6 py-3 min-h-[48px] text-sm font-medium uppercase tracking-wide transition-all duration-300 ease-out hover:opacity-90 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 touch-manipulation active:scale-95 border rounded-md"
+          className="w-full inline-flex items-center justify-center gap-2 px-6 py-3 min-h-[48px] text-sm uppercase tracking-wide transition-all duration-300 ease-out hover:opacity-90 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 touch-manipulation active:scale-95 border rounded-md"
           style={{
             backgroundColor: 'var(--color-charcoal)',
             color: 'var(--color-bg-primary)',
             borderColor: 'var(--color-charcoal)',
+            fontWeight: 400
           }}
         >
           <Send size={16} />
@@ -187,8 +188,8 @@ const ContactForm = () => {
                 <CheckCircle size={64} className="text-green-500" />
               </div>
               <h3 
-                className="text-2xl font-serif font-semibold"
-                style={{ color: 'var(--color-text-primary)' }}
+                className="text-2xl font-serif"
+                style={{ color: 'var(--color-text-primary)', fontWeight: 400 }}
               >
                 Message Sent Successfully!
               </h3>
@@ -200,10 +201,11 @@ const ContactForm = () => {
               </p>
               <button
                 onClick={closeModal}
-                className="mt-6 px-8 py-3 text-sm font-medium uppercase tracking-wide transition-all duration-300 ease-out hover:opacity-90 rounded-md"
+                className="mt-6 px-8 py-3 text-sm uppercase tracking-wide transition-all duration-300 ease-out hover:opacity-90 rounded-md"
                 style={{
                   backgroundColor: 'var(--color-charcoal)',
                   color: 'var(--color-bg-primary)',
+                  fontWeight: 400
                 }}
               >
                 Close

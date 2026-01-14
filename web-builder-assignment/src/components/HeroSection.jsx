@@ -69,10 +69,10 @@ const HeroSection = () => {
             <span
               className="
                 block mt-1 xs:mt-2
-                font-normal text-gray-100
+                text-gray-100
                 text-2xl xs:text-3xl sm:text-4xl lg:text-5xl xl:text-6xl
               "
-              style={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 0.8)' }}
+              style={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 0.8)', fontWeight: 400 }}
             >
               OWNER OF THE RIDGE REALTY GROUP
             </span>
@@ -84,13 +84,14 @@ const HeroSection = () => {
             animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
             transition={{ duration: 1, delay: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
             className="
-              text-gray-200 font-light
+              text-gray-200
               text-sm xs:text-base sm:text-lg lg:text-xl
               leading-relaxed
               mb-12 xs:mb-14 sm:mb-12
               px-4 xs:px-2 sm:px-0
               max-w-2xl mx-auto
             "
+            style={{ fontWeight: 400 }}
           >
             Discover exceptional properties with personalized service and unmatched expertise
             in luxury real estate.
@@ -111,7 +112,7 @@ const HeroSection = () => {
                 px-6 xs:px-8 sm:px-10 py-4 xs:py-3.5 sm:py-4
                 min-w-[180px] xs:min-w-[200px]
                 min-h-[48px]
-                text-sm xs:text-sm sm:text-base font-medium uppercase tracking-wide
+                text-sm xs:text-sm sm:text-base uppercase tracking-wide
                 border rounded-full
                 transition-all duration-300 ease-out
                 hover:opacity-90 hover:-translate-y-[1px]
@@ -124,6 +125,7 @@ const HeroSection = () => {
                 backgroundColor: 'var(--color-bg-primary)',
                 color: 'var(--color-text-primary)',
                 borderColor: 'var(--color-bg-primary)',
+                fontWeight: 400
               }}
             >
               View Properties

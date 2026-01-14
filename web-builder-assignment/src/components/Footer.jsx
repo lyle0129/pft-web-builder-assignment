@@ -31,8 +31,8 @@ const Footer = () => {
           {/* Connect With Us */}
           <div>
             <h3
-              className="font-serif font-light text-lg xs:text-xl tracking-wide mb-4 xs:mb-6"
-              style={{ color: 'white' }}
+              className="font-serif text-lg xs:text-xl tracking-wide mb-4 xs:mb-6"
+              style={{ color: 'white', fontWeight: 300 }}
             >
               Connect With Us
             </h3>
@@ -112,7 +112,7 @@ const Footer = () => {
         {/* Divider */}
         <div className="border-t border-white/10 mt-8 xs:mt-12 pt-6 xs:pt-8 text-center">
           {/* Credits - Centered */}
-          <div className="text-xs sm:text-sm font-light text-gray-400">
+          <div className="text-xs sm:text-sm text-gray-400" style={{ fontWeight: 400 }}>
             <p>&copy; 2026 Marci METZGER Homes - All Rights Reserved</p>
             <p className="mt-1">Site made by Lyle Denzell C. Trillanes</p>
           </div>
